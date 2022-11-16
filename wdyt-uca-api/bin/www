@@ -3,8 +3,7 @@
 /**
  * Module dependencies.
  */
-
-require("dotenv").config({path: __dirname + '/.env'});
+require("dotenv").config();
 var app = require('../app');
 var debug = require('debug')('wdyt-uca-api:server');
 var http = require('http');
@@ -58,7 +57,7 @@ function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
   }
-
+  
   var bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
